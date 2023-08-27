@@ -16,10 +16,10 @@ def insertar(nodo_actual, nueva_etiqueta, es_interactuable):
     
     get_index(nueva_etiqueta)
     get_index(nodo_actual.etiqueta)
-    print("Nueva"+str(nueva_etiqueta.i))
-    print("Actual"+str(nodo_actual.i))
+    #print("Nueva: "+str(nueva_etiqueta.i))
+    #print("Actual: "+str(nodo_actual.etiqueta.i))
 
-    if nueva_etiqueta.i < nodo_actual.i:
+    if nueva_etiqueta.i < nodo_actual.etiqueta.i:
         nodo_actual.izquierda = insertar(nodo_actual.izquierda, nueva_etiqueta, es_interactuable)
     else:
         nodo_actual.derecha = insertar(nodo_actual.derecha, nueva_etiqueta, es_interactuable)
@@ -29,13 +29,13 @@ def insertar(nodo_actual, nueva_etiqueta, es_interactuable):
 def get_index(etiqueta):
     if etiqueta.tag_name == "a":
         etiqueta.i=1
-    elif etiqueta.tag_name == "button":
+    elif etiqueta.tag_name== "button":
         etiqueta.i=2
     #elif etiqueta.tag_name == "menu":
     #    etiqueta.i=3
     #elif etiqueta.tag_name == "select":
     #    etiqueta.i=4
-    elif etiqueta.tag_name == "input" or etiqueta.tag_name == "textarea":
+    elif etiqueta.tag_name == "input" or etiqueta == "textarea":
         etiqueta.i=5
     else:
         etiqueta.i=0
@@ -73,7 +73,7 @@ for etiqueta in etiquetas:
     if etiqueta.tag_name in ["a", "button", "input", "textarea"]:
         es_interactuable = True
     
-    raiz = insertar(raiz, etiqueta.tag_name, es_interactuable)
+    raiz = insertar(raiz, etiqueta, es_interactuable)
 
 # Buscar si una etiqueta específica es interactuable
 etiqueta_buscada = "input"
