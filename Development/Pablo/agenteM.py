@@ -41,17 +41,17 @@ def get_index(elemento):
     else:
         elemento.i=0
 
-def buscar_interactuable(nodo_actual, elemento, i):
+def buscar_interactuable(nodo_actual, tag, i):
     if nodo_actual is None:
         return False
     
-    if nodo_actual.elemento.tag_name == elemento:
+    if nodo_actual.elemento.tag_name == tag:
         return nodo_actual.elemento
     
     if i < nodo_actual.elemento.i:
-        return buscar_interactuable(nodo_actual.izquierda, elemento, i)
+        return buscar_interactuable(nodo_actual.izquierda, tag, i)
     else:
-        return buscar_interactuable(nodo_actual.derecha, elemento, i)
+        return buscar_interactuable(nodo_actual.derecha, tag, i)
 
 # Configuración de Selenium
 driver = webdriver.Chrome()
