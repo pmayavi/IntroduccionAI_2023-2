@@ -45,7 +45,7 @@ def get_index(elemento):
     #    elemento.i=4
     elif elemento.tag_name == "input":
         elemento.i=5
-    elif elemento.tag_name == "textarea" or validar_id_busqueda(elemento):
+    elif elemento.tag_name == "ydt-searchbox" or validar_id_busqueda(elemento):
         elemento.i=6
     else:
         elemento.i=0
@@ -68,11 +68,18 @@ def validar_id_busqueda(elemento):
         return True
     else:
         return False
+    
+def validar_text_busqueda(elemento):
+    palabras_busqueda=["Search", "search", "Búsqueda", "búsqueda", "busqueda", "Busqueda", "Buscar", "buscar"]
+    if elemento.text and any(palabra in str(elemento.id) for palabra in palabras_busqueda):
+        return True
+    else:
+        return False
 
 
 # Configuración de Selenium
 driver = webdriver.Chrome()
-url = "https://www.google.com"
+url = "https://www.youtube.com"
 driver.get(url)
 
 # Obtener todas las elementos en la página
@@ -88,15 +95,19 @@ for elemento in elementos:
     
     # Aquí puedes agregar lógica para determinar si la elemento es interactuable
     # Por ejemplo, si es un enlace (<a>) o un botón (<button>)
-    if elemento.tag_name in ["a", "button", "input", "textarea"]:
+    if validar_id_busqueda(elemento):
         es_interactuable = True
         raiz = insertar(raiz, elemento, es_interactuable)
-        all += elemento.tag_name + ": " + elemento.text + " " + elemento.id + "\n"
-    elif validar_id_busqueda(elemento):
+        all += "Search: " + elemento.text + " " + elemento.id +  " "+ str(elemento.i) +"\n"
+    elif validar_text_busqueda(elemento):
         es_interactuable = True
         raiz = insertar(raiz, elemento, es_interactuable)
-        all += "Search: " + elemento.text + " " + elemento.id + "\n"
-
+        all += "Search: " + elemento.text + " " + elemento.id +  " "+ str(elemento.i) +"\n"
+    elif elemento.tag_name in ["a", "button", "input", "textarea"]:
+        es_interactuable = True
+        raiz = insertar(raiz, elemento, es_interactuable)
+        all += elemento.tag_name + ": " + elemento.text + " " + elemento.id + " "+ str(elemento.i) +"\n"
+        
 
 with open("./all.txt", "w", encoding="utf-8") as file:
     file.write(all)
@@ -109,7 +120,7 @@ else:
     print("El árbol está vacío.")
 
 # Buscar si una elemento específica es interactuable
-elemento_buscada = "textarea"
+elemento_buscada = "ydt-searchbox"
 es_interactuable = buscar_interactuable(raiz, elemento_buscada, 5)
 
 if es_interactuable:
