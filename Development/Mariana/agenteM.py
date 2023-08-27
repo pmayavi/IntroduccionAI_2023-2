@@ -43,8 +43,10 @@ def get_index(elemento):
     #    elemento.i=3
     #elif elemento.tag_name == "select":
     #    elemento.i=4
-    elif elemento.tag_name == "input" or elemento.tag_name == "textarea":
+    elif elemento.tag_name == "input":
         elemento.i=5
+    elif elemento.tag_name == "textarea" or validar_id_busqueda(elemento):
+        elemento.i=6
     else:
         elemento.i=0
 
@@ -59,6 +61,14 @@ def buscar_interactuable(nodo_actual, tag, i):
         return buscar_interactuable(nodo_actual.izquierda, tag, i)
     else:
         return buscar_interactuable(nodo_actual.derecha, tag, i)
+    
+def validar_id_busqueda(elemento):
+    palabras_busqueda=["Search", "search", "Búsqueda", "búsqueda", "busqueda", "Busqueda", "Buscar", "buscar"]
+    if elemento.id and any(palabra in str(elemento.id) for palabra in palabras_busqueda):
+        return True
+    else:
+        return False
+
 
 # Configuración de Selenium
 driver = webdriver.Chrome()
@@ -82,8 +92,13 @@ for elemento in elementos:
         es_interactuable = True
         raiz = insertar(raiz, elemento, es_interactuable)
         all += elemento.tag_name + ": " + elemento.text + " " + elemento.id + "\n"
+    elif validar_id_busqueda(elemento):
+        es_interactuable = True
+        raiz = insertar(raiz, elemento, es_interactuable)
+        all += "Search: " + elemento.text + " " + elemento.id + "\n"
 
-with open("Development/Mariana/all.txt", "w", encoding="utf-8") as file:
+
+with open("./all.txt", "w", encoding="utf-8") as file:
     file.write(all)
     
 # Imprimir el árbol en orden
