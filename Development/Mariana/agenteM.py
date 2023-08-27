@@ -81,7 +81,7 @@ for elemento in elementos:
     if elemento.tag_name in ["a", "button", "input", "textarea"]:
         es_interactuable = True
         raiz = insertar(raiz, elemento, es_interactuable)
-        all += elemento.tag_name + ": " + elemento.text + "\n"
+        all += elemento.tag_name + ": " + elemento.text + " " + elemento.id + "\n"
 
 with open("Development/Mariana/all.txt", "w", encoding="utf-8") as file:
     file.write(all)
