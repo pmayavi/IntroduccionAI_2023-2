@@ -1,330 +1,330 @@
-Search:  4
-button:  2
+g:  7
+button:  6
+a:  0
+button:  6
+button:  6
+a:  0
+button:  6
+button:  6
 a:  1
-button:  2
-button:  2
-a:  1
-button:  2
-button:  2
-a:  1
-button:  2
-Search:  4
-Search:  4
-button:  2
-button:  2
-Search:  4
-button:  2
-button:  2
-a:  1
-button:  2
-a: Sign in 1
-button:  2
+button:  6
+ytd-searchbox:  7
+input:  7
+button:  6
+button:  6
+yt-icon-button:  7
+button:  6
+button:  6
+a:  0
+button:  6
+a: Sign in 5
+button:  6
 a:  1
 a: Home 1
-a: Shorts 1
+a: Shorts 0
 a: Subscriptions 1
 a: Library 1
 a: History 1
-button:  2
-button:  2
-button:  2
-a: Get it now 1
-a: 10:35 1
+button:  6
+button:  6
+button:  6
+a: Get it now 5
+a: 16:09 1
+a:  5
 a:  1
+a: Myke Towers - LALA (Lyrics/Letra) 1
+a: Cepheus Letra 2
+button:  6
+a: 3:42:39 1
+a:  5
 a:  1
-a: ¡DARWIN INGRESÓ Y MARCÓ UN DOBLETE PARA EL TRIUNFO DE LOS REDS! | Newcastle 1-2 Liverpool | RESUMEN 1
-a: ESPN Fans 1
-button:  2
-a: 16:21 1
+a: CHAVO DEL 8 - DON RAMON PROFESOR DE GUITARRA - MARATON DE 3 HORAS CAPITULOS FAVORITOS 1
+a: G⚽L ECUADOR 2
+button:  6
+a:  5
+a:  5
 a:  1
+a: Dua Lipa, Calvin Harris, Coldplay, Martin Garrix & Kygo, The Chainsmokers Style - Feeling Me 1
+a: Deep Mood Radio. 2
+button:  6
+a:  5
+a:  5
 a:  1
-a: RATATOUILLE | TIENES que verla 2 VECES para ENTENDERLA | Relato & Reflexiones 1
-a: Farid Dieck 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: Giant Monopoly Game With Real Money 1
-a: MrBeast 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: Belanova - Rosa Pastel (Letra) 1
-a: hell and silences 1
-button:  2
-a:  1
+a: Jesús Adrián Romero Sus Grandes Éxitos Top 30 Mejores Canciones 1
+a: Vastago Play 2
+button:  6
+a:  4
+a: Most Epic Moments in Football 🤯 1
+button:  6
+a:  4
 a: Normal People vs. Me 1
-button:  2
+button:  6
+a:  4
+a: This bride shocked everyone at the wedding 😱 1
+button:  6
+a:  4
 a:  1
-a: Primera vez que Perrito chihuahua visita el veterinario #shorts #dogs 1
-button:  2
+button:  6
+a:  4
 a:  1
-a: 0.001% Moments In Football 😳 1
-button:  2
+button:  6
+a:  4
 a:  1
+button:  6
+a:  4
 a:  1
-button:  2
+button:  6
+a:  4
 a:  1
+button:  6
+a:  4
 a:  1
-button:  2
+button:  6
+a:  4
 a:  1
+button:  6
+a:  4
 a:  1
-button:  2
+button:  6
+a:  4
 a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-button:  2
-button: Show more 2
-button:  2
-a:  1
-a:  1
-a:  1
-a: Asi es un Suzuki New Jimny - Test drive 1
-a: Mauro Silva - Academia 4x4 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: Trying street food in INDIA | Everything is spicy! 🌶️🇮🇳 1
-a: Luisito Comunica 1
-button:  2
-a:  1
-a: Trending 1
-a:  1
-a:  1
-a:  1
-a: Encerré 100 JUGADORES en una ISLA DESIERTA por 24 HORAS 🏝️ 1
-a: invictor 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: 30 Curiosidades de Elemental | Cosas que quizás no sabías 1
-a: NeiterAll 1
-button:  2
-a:  1
-a:  1
-a:  1
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-a:  1
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-a:  1
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-a:  1
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-a:  1
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-a:  1
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-a:  1
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-a:  1
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-a:  1
-a:  1
-a:  1
-button:  2
-a:  1
-a:  1
-a:  1
-a:  1
-a:  1
-button:  2
-button: Show more 2
-button:  2
-a:  1
-a:  1
-a:  1
-a: ¡SHOW DE GOLES Y TRIUNFAZO CULÉ ANTE EL SUBMARINO AMARILLO! | Villarreal 3-4 Barcelona | RESUMEN 1
-a: ESPN Fans 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: Los Mejores momentos xd de gumball | Dafar_xd 1
-a: Dafar_xd 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: ¿Qué piensan los Japoneses de nosotros? 🫢 1
-a: PlanetaJuan 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: $1 vs $250,000 Vacation! 1
-a: MrBeast 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: Bob Marley Greatest Hits ~ Reggae Music ~ Top 10 Hits of All Time Vol5 1
-a: Reggae Music  1
-button:  2
-a:  1
-a:  1
-a:  1
-a: Building a Private Pool in a Luxury Underground House in 149 Days 1
-a: Mr.Heang Update 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: ✅ Top 10 CAMEOS de Minecraft en la Cultura Popular!! 1
-a: Bobicraft 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: PERROS CRIOLLOS - TIPOS DE SEGUIDORES, CAP. 29 1
-a: Perros Criollos 1
-button:  2
-a:  1
-a:  1
+button:  6
+button:  6
+button:  6
+a:  5
+a:  5
 a:  1
 a: KAROL G - MI EX TENÍA RAZÓN (Official Video) 1
-a: KAROL G 1
-button:  2
+a: KAROL G 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: ME CONVERTÍ EN T0MB0 POR UN DÍA | La Sapaaaaa 1
+a: Leandro La Sapa 2
+button:  6
+a:  1
+a: Trending 3
+a:  5
+a:  5
+a:  1
+a: 30 Curiosidades de Elemental | Cosas que quizás no sabías 1
+a: NeiterAll 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: Miley Cyrus - Used To Be Young (Official Video) 1
+a: Miley Cyrus 2
+button:  6
+a:  5
+a:  5
 a:  1
 a:  1
-a:  1
-a: ME ENCANTA VIVIR EN BOGOTA - OBSERVACIONES DIARIAS #9 1
-a: Nestor Camacho RT 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: Ed Sheeran, Martin Garrix, Kygo, Dua Lipa, Avicii, The Chainsmokers Style - Feeling Me 1
-a: Legend Music - Música Electrónica 1
-button:  2
+a:  2
+button:  6
+a:  5
+a:  5
 a:  1
 a:  1
-a:  1
-a: I Put Millions Of Pennies In My Friends Backyard 1
-a: MrBeast 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: ¡DOBLETE DE HARRY KANE Y VICTORIA BÁVARA EN MÚNICH! | Bayern Múnich 3-1 Augsburgo | RESUMEN 1
-a: ESPN Fans 1
-button:  2
+a:  2
+button:  6
+a:  5
+a:  5
 a:  1
 a:  1
-a:  1
-a: ¿SON REALES LOS VÍDEOS DE MR.BEAST? 1
-a: Ibai 1
-button:  2
-a:  1
-a:  1
-a:  1
-a: MIX SALSA Y BACHATA DADDY YANKEE, MARC ANTONY, PRINCE ROYCE, ROMEO SANTOS AVENTURA 1
-a: SUMMER HITS 1
-button:  2
+a:  2
+button:  6
+a:  5
+a:  5
 a:  1
 a:  1
-a:  1
-a: Así es la ciudad “MÁS BONITA” de toda Asia 😍 1
-a: PlanetaJuan 1
-button:  2
-button:  2
-a:  1
+a:  2
+button:  6
+a:  5
+a:  5
 a:  1
 a:  1
-a:  1
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
-a:  1
-button:  2
-a:  1
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
-a:  1
-button:  2
-button:  2
-button:  2
-a:  1
-button:  2
-a:  1
-input:  3
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
-a:  1
-button:  2
-a:  1
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
-button:  2
+a:  2
+button:  6
+a:  5
+a:  5
 a:  1
 a:  1
-button:  2
+a:  2
+button:  6
+a:  5
+a:  5
 a:  1
 a:  1
+a:  2
+button:  6
+a:  5
+a:  5
+a:  1
+a:  1
+a:  2
+button:  6
+a:  5
+a:  5
+a:  1
+a:  1
+a:  2
+button:  6
+a:  5
+a:  5
+a:  1
+a:  1
+a:  2
+button:  6
+button:  6
+button:  6
+a:  5
+a:  5
+a:  1
+a: EL REY MONO DE NETFLIX - RESUMEN EN 12 MINUTOS 1
+a: Enchula tu mente !!!! 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: 3 AVISOS ESTOICOS sobre LA SOLEDAD 1
+a: Un.Lugar.Estoico 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: Every Country On Earth Fights For $250,000! 1
+a: MrBeast 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: Salsa Para Dedicar - Salsa Power 1
+a: Salsa Power 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: Masha y el Oso - 🌼 Hurra! Verano! Vacaciones! 🏝️ 1
+a: Masha y el Oso 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: ESTOY BIEN PENDEJ* 😓 1
+a: Rivers 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: Eros Ramazzotti, Ricardo Arjona, Chayanne, Franco de Vita, Cristian Castro, Ricky Martin Y Mas 1
+a: Éxitos Romanticas 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: PERROS CRIOLLOS - TIPOS DE SEGUIDORES, CAP. 29 1
+a: Perros Criollos 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: Ed Sheeran Greatest Hits Full Album 2023 - The Best of Ed Sheeran Playlist - Ed Sheeran Best Songs 1
+a: Paradise 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: Rock en español mix (volumen 1) mana, prisioneros, hombres g , enanitos verdes,Vilma Palma y más 1
+a: Dj Ritplay 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: 🌈Todas De Los Videos De Slime Leidys Sotolongo Chismes / Temporada 23 1
+a: Cream Cake 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: ¡DARWIN INGRESÓ Y MARCÓ UN DOBLETE PARA EL TRIUNFO DE LOS REDS! | Newcastle 1-2 Liverpool | RESUMEN 1
+a: ESPN Fans 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: Andres Cepeda Mejores Exitos 1
+a: Anthony Roa 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: MEJORAS PARA EL HOGAR QUE PUEDES HACER CON TUS PROPIAS MANOS 1
+a: TechZone 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: Yuridia, Ha Ash, Reik, Rio Roma, Camila, Gloria Trevi, David Bisbal, Sin Bandera, Carlos Rivera,... 1
+a: Música Romántica 2
+button:  6
+a:  5
+a:  5
+a:  1
+a: ¡Bob Esponja cocina Cangreburgers por UNA HORA! | Bob Esponja en Español 1
+a: Bob Esponja en Español 2
+button:  6
+button:  6
+a:  0
+a:  0
+a:  0
+a:  0
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+a:  0
+button:  6
+a:  0
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+a:  0
+button:  6
+button:  6
+button:  6
+a:  0
+button:  6
+a:  0
+input:  8
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+a:  0
+button:  6
+a:  0
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+button:  6
+a:  0
+a:  0
+button:  6
+a:  0
+a:  0
