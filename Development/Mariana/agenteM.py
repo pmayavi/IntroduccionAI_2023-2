@@ -80,10 +80,10 @@ elemento_buscada = "input"
 es_interactuable = buscar_interactuable(raiz, elemento_buscada, 5)
 
 if es_interactuable:
-    print(f"La elemento <{elemento_buscada}> es interactuable.")
+    print(f"El elemento <{elemento_buscad}> es interactuable.")
     # es_interactuable.send_keys("Search keyword")
 else:
-    print(f"La elemento <{elemento_buscada}> no es interactuable.")
+    print(f"El elemento <{elemento_buscada}> no es interactuable.")
 
 # Cerrar el navegador
 time.sleep(30)
