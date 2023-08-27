@@ -1,10 +1,11 @@
 from selenium import webdriver
+import webbrowser
 
 # Inicializar el controlador de Chrome
 driver = webdriver.Chrome()
 
 # Navegar a la página de resultados de búsqueda de YouTube
-driver.get("https://www.youtube.com")
+driver.get("https://www.youtube.com/results?search_query=hellsing+abridged")
 
 # Obtener todos los enlaces en la página
 links = driver.find_elements(by="tag name", value="a")
@@ -17,6 +18,10 @@ with open("videos.txt", "w", encoding="utf-8") as videos_file, \
      open("demas_urls.txt", "w", encoding="utf-8") as demas_urls_file:
     
     canales_set = set()  # Para almacenar URLs de canales
+    video_list = []  # Lista de tuplas de videos con título/texto y URL
+    canales_list = []  # Lista de tuplas de canales con título/texto y URL
+    feed_list = []  # Lista de tuplas de feeds con título/texto y URL
+    shorts_list = []  # Lista de tuplas de shorts con título/texto y URL
     
     for link in links:
         href = link.get_attribute("href")
@@ -31,26 +36,73 @@ with open("videos.txt", "w", encoding="utf-8") as videos_file, \
             info += "\n" + "-" * 30 + "\n"
             
             if "https://www.youtube.com/watch" in href:
-                if text or title: #if para quitar los link de video sin descripción
+                if text or title:
                     videos_file.write(info)
+                    video_list.append((text or title, href))
             elif "https://www.youtube.com/channel" in href or "https://www.youtube.com/@" in href:
-                # Verificar si el canal ya está en el set
-                if href not in canales_set:# if para no repetir canales
+                if href not in canales_set:
                     canales_set.add(href)
                     canales_file.write(info)
+                    canales_list.append((text or title, href))
             elif "https://www.youtube.com/feed" in href:
-                if text or title: #if para quitar los link de video sin descripción
+                if text or title:
                     feed_file.write(info)
+                    feed_list.append((text or title, href))
             elif "https://www.youtube.com/shorts" in href:
                 shorts_file.write(info)
+                shorts_list.append((text or title, href))
             else:
                 demas_urls_file.write(info)
-search_boxes = driver.find_elements(by="css selector", value="input[id='search']")
-print("Barras de búsqueda encontradas:")
-for search_box in search_boxes:
-    search_name = search_box.get_attribute("name")
-    search_id = search_box.get_attribute("id")
-    print("Nombre de la barra de búsqueda:", search_name)
-    print("ID de la barra de búsqueda:", search_id)
+
 # Cerrar el navegador al finalizar
 driver.quit()
+
+# Preguntar al usuario qué lista imprimir y abrir un enlace asociado
+lista_a_imprimir = input("¿Qué lista deseas imprimir? (videos/canales/feed/shorts): ").lower()
+
+if lista_a_imprimir == "videos":
+    print("Lista de videos con título/texto y URL:")
+    for title_text, href in video_list:
+        print(title_text)
+    titulo_seleccionado = input("Ingrese el título del video que desea abrir: ")
+    for title_text, link in video_list:
+        if titulo_seleccionado.lower() in title_text.lower():
+            webbrowser.open(link)
+            break
+    else:
+        print("Video no encontrado")
+elif lista_a_imprimir == "canales":
+    print("Lista de canales con título/texto y URL:")
+    for title_text, href in canales_list:
+        print(title_text)
+    titulo_seleccionado = input("Ingrese el título del canal que desea abrir: ")
+    for title_text, link in canales_list:
+        if titulo_seleccionado.lower() in title_text.lower():
+            webbrowser.open(link)
+            break
+    else:
+        print("Canal no encontrado")
+elif lista_a_imprimir == "feed":
+    print("Lista de feeds con título/texto y URL:")
+    for title_text, href in feed_list:
+        print(title_text)
+    titulo_seleccionado = input("Ingrese el título del feed que desea abrir: ")
+    for title_text, link in feed_list:
+        if titulo_seleccionado.lower() in title_text.lower():
+            webbrowser.open(link)
+            break
+    else:
+        print("Feed no encontrado")
+elif lista_a_imprimir == "shorts":
+    print("Lista de shorts con título/texto y URL:")
+    for title_text, href in shorts_list:
+        print(title_text)
+    titulo_seleccionado = input("Ingrese el título del short que desea abrir: ")
+    for title_text, link in shorts_list:
+        if titulo_seleccionado.lower() in title_text.lower():
+            webbrowser.open(link)
+            break
+    else:
+        print("Short no encontrado")
+else:
+    print("Lista no reconocida")
