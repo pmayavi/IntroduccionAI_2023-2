@@ -9,6 +9,13 @@ class Nodo:
         self.izquierda = None
         self.derecha = None
 
+    def imprimir_arbol(self):
+        if self.izquierda:
+            self.izquierda.imprimir_arbol()
+        print(self.elemento.tag_name, end=" -> ")
+        if self.derecha:
+            self.derecha.imprimir_arbol()
+
 def insertar(nodo_actual, nuevo_elemento, es_interactuable):
     if nodo_actual is None:
         get_index(nuevo_elemento)
@@ -74,14 +81,21 @@ for elemento in elementos:
         es_interactuable = True
     
         raiz = insertar(raiz, elemento, es_interactuable)
+    
+# Imprimir el árbol en orden
+if raiz:
+    print("Árbol:")
+    raiz.imprimir_arbol()
+else:
+    print("El árbol está vacío.")
 
 # Buscar si una elemento específica es interactuable
-elemento_buscada = "input"
+elemento_buscada = "textarea"
 es_interactuable = buscar_interactuable(raiz, elemento_buscada, 5)
 
 if es_interactuable:
-    print(f"El elemento <{elemento_buscad}> es interactuable.")
-    # es_interactuable.send_keys("Search keyword")
+    print(f"El elemento <{elemento_buscada}> es interactuable.")
+    es_interactuable.send_keys("Search keyword")
 else:
     print(f"El elemento <{elemento_buscada}> no es interactuable.")
 
