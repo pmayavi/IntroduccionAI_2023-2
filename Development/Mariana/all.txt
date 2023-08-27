@@ -1,0 +1,28 @@
+a: Gmail
+a: Imágenes
+a: 
+a: Acceder
+button: 
+textarea: 
+input: 
+input: 
+a: 
+input: 
+input: 
+input: 
+input: 
+input: 
+input: 
+a: English
+a: Sobre Google
+a: Publicidad
+a: Negocios
+a: Cómo funciona la Búsqueda
+a: Privacidad
+a: Condiciones
+a: 
+a: 
+a: 
+a: 
+a: 
+textarea: 

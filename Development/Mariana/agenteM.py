@@ -70,6 +70,7 @@ elementos = driver.find_elements(By.XPATH, "//*")
 
 # Crear el nodo raíz del árbol
 raiz = None
+all = ""
 
 # Procesar las elementos
 for elemento in elementos:
@@ -79,8 +80,11 @@ for elemento in elementos:
     # Por ejemplo, si es un enlace (<a>) o un botón (<button>)
     if elemento.tag_name in ["a", "button", "input", "textarea"]:
         es_interactuable = True
-    
         raiz = insertar(raiz, elemento, es_interactuable)
+        all += elemento.tag_name + ": " + elemento.text + "\n"
+
+with open("Development/Mariana/all.txt", "w", encoding="utf-8") as file:
+    file.write(all)
     
 # Imprimir el árbol en orden
 if raiz:
@@ -95,7 +99,7 @@ es_interactuable = buscar_interactuable(raiz, elemento_buscada, 5)
 
 if es_interactuable:
     print(f"El elemento <{elemento_buscada}> es interactuable.")
-    es_interactuable.send_keys("Search keyword")
+    es_interactuable.send_keys("Tetas hombres")
 else:
     print(f"El elemento <{elemento_buscada}> no es interactuable.")
 
