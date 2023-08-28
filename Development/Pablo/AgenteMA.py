@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 import time
 import threading
 import selenium.common.exceptions as ex
+import speech_recognition as sr
+# instalar PyAudio (pip install PyAudio)
 
 set1 = set(
     [
@@ -105,7 +107,7 @@ def get_index(elemento):
             text = elemento.text
             title = elemento.get_attribute("title")
 
-            if href and "https://www.youtube.com" in href and text or title:
+            if href and ("https://www.youtube.com" in href) and (text or title):
                 if "https://www.youtube.com/watch" in href:  # es video?
                     elemento.i = peso["a_video"]
                 elif (
@@ -217,18 +219,50 @@ def main():
         print("El árbol está vacío.")
 
     # Buscar si una elemento específica es interactuable
-    elemento_buscada = "ytd-searchbox"
-    es_interactuable = buscar_interactuable(raiz, elemento_buscada, 7)
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Di algo...")
+        audio = r.listen(source)
+    try:
+        text = r.recognize_google(audio, language='es-ES')
+        print("Dijiste: {}".format(text))
+    except:
+        print("¡Lo sentimos! No pudimos comprender los que dijiste")
+
+    comando="Buscar" #INPUT POR VOZ
+    elementos_busqueda=[]
+    palabras_busqueda="Funny cat videos"
+
+    if comando == "Buscar":
+        elementos_busqueda=["ytd-searchbox", "searchbox", "textarea"]
+
+
+    '''
+    if comando == "Buscar":
+        elementos_buscada=["ytd-searchbox", "searchbox", "textarea"]
+    elif comando == "Regresar":
+        ...
+    '''
+
+    #Para hacerlo genérico, va a buscar entre las etiquetas más comunes que tienen
+    # las barras de búsqueda en HTML. Va a buscar en el árbol todos los elementos
+    # de la lista hasta que encuentre uno que corresponda al peso 7 y que sea interactuable.
+    es_interactuable=False
+    for elemento in elementos_busqueda:
+        elemento_busqueda = elemento
+        es_interactuable = buscar_interactuable(raiz, elemento_busqueda, 7)
+        if es_interactuable:
+            break
 
     if es_interactuable:
         for elemento in es_interactuable.elemento:
             try:
-                print(f"El elemento <{elemento_buscada}> es interactuable.")
-                elemento.send_keys("Tetas hombres")
+                print(f"El elemento <{elemento_busqueda}> es interactuable.")
+                elemento.send_keys(palabras_busqueda)
             except ex.ElementNotInteractableException:
                 print("No es esta")
     else:
-        print(f"El elemento <{elemento_buscada}> no es interactuable.")
+        print(f"El elemento <{elemento_busqueda}> no es interactuable.")
 
     # Cerrar el navegador
     time.sleep(30)
