@@ -171,7 +171,7 @@ def main():
     auto_timmer()
     # Configuración de Selenium
     driver = webdriver.Chrome()
-    url = "https://www.google.com"
+    url = "https://www.youtube.com"
     driver.get(url)
     time.sleep(10)
 
@@ -219,6 +219,7 @@ def main():
     else:
         print("El árbol está vacío.")
 
+    
     # Buscar si una elemento específica es interactuable
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -239,7 +240,7 @@ def main():
 
     if comando == "Buscar":
         elementos_busqueda=["ytd-searchbox", "searchbox", "textarea"]
-
+        
 
     '''
     if comando == "Buscar":
