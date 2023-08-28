@@ -223,15 +223,18 @@ def main():
     with sr.Microphone() as source:
         print("Di algo...")
         audio = r.listen(source)
-    try:
-        text = r.recognize_google(audio, language='es-ES')
-        print("Dijiste: {}".format(text))
-    except:
-        print("¡Lo sentimos! No pudimos comprender los que dijiste")
+        try:
+            text = r.recognize_google(audio, language='es-ES')
+            print("Dijiste: {}".format(text))
+        except:
+            print("¡Lo sentimos! No pudimos comprender los que dijiste")
 
-    comando="Buscar" #INPUT POR VOZ
+    splitted= text.split(' ', 1)
+    comando= splitted[0] #INPUT POR VOZ
+    print("Comando: "+comando)
     elementos_busqueda=[]
-    palabras_busqueda="Funny cat videos"
+    palabras_busqueda=splitted[1]
+    print("Palabras: "+palabras_busqueda)
 
     if comando == "Buscar":
         elementos_busqueda=["ytd-searchbox", "searchbox", "textarea"]
