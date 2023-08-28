@@ -28,6 +28,7 @@ peso = {
     "button": 6,
     "search_bar": 7,
     "input": 8,
+    "textarea": 9,
 }
 
 
@@ -170,7 +171,7 @@ def main():
     auto_timmer()
     # Configuración de Selenium
     driver = webdriver.Chrome()
-    url = "https://www.youtube.com"
+    url = "https://www.google.com"
     driver.get(url)
     time.sleep(10)
 
@@ -253,7 +254,7 @@ def main():
     es_interactuable=False
     for elemento in elementos_busqueda:
         elemento_busqueda = elemento
-        es_interactuable = buscar_interactuable(raiz, elemento_busqueda, 7)
+        es_interactuable = buscar_interactuable(raiz, elemento_busqueda, 9)
         if es_interactuable:
             break
 
