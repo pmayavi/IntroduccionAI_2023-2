@@ -1,0 +1,10 @@
+[
+    {
+        "comando": "palabra 1",
+        "palabras": ["sinonimo", "sinonimo2", "sinonimo3", "sinonimo4"]
+    },
+    {
+        "comando": "palabra 2",
+        "palabras": ["sinonimo5", "sinonimo6", "sinonimo7"]
+    }
+]
