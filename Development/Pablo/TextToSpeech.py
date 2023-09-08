@@ -11,3 +11,5 @@ for voice in voices:
     engine.say("Hola perras sapas")
     engine.runAndWait()
     engine.stop()
+
+# HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_ES-MX_SABINA_11.0

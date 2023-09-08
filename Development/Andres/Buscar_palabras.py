@@ -40,6 +40,7 @@ if primer_resultado:
     print(
         f"\nComando: {comando}, \nSinónimo: {sinonimo}, \nPosición Sinónimo: ({posicion_sinonimo[0]}, {posicion_sinonimo[1]}), \nContenido despues del comando: {contenido_despues}\n"
     )
+    # Decirlo en voz alta con voz en español
     engine = pyttsx3.init()
     engine.setProperty(
         "voice",
