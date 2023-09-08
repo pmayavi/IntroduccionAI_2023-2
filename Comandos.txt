@@ -2,4 +2,5 @@ pip install -U selenium
 pip install pyautogui
 pip install SpeechRecognition
 pip install PyAudio
+pip install pyttsx3
 
