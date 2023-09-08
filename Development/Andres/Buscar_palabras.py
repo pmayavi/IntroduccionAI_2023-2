@@ -38,7 +38,7 @@ for comando, sin in sinonimos_con_comando:
 if primer_resultado:
     comando, sinonimo, posicion_sinonimo, contenido_despues = primer_resultado
     print(
-        f"Comando: {comando}, Sinónimo: {sinonimo}, Posición Sinónimo: ({posicion_sinonimo[0]}, {posicion_sinonimo[1]}), Contenido despues del comando: {contenido_despues}"
+        f"\nComando: {comando}, \nSinónimo: {sinonimo}, \nPosición Sinónimo: ({posicion_sinonimo[0]}, {posicion_sinonimo[1]}), \nContenido despues del comando: {contenido_despues}\n"
     )
     engine = pyttsx3.init()
     engine.setProperty(
