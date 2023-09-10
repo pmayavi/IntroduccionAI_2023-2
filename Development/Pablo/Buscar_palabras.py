@@ -2,9 +2,27 @@ import json
 import re
 import pyttsx3
 
-# Cargar el archivo JSON con los comandos y sus sinónimos
-with open("Development/Pablo/palabras.json", "r") as file:
-    data = json.load(file)
+# Cargar el archivo JSON con la base de conocimientos, este esta en el
+# [repositorio](https://github.com/pmayavi/IntroduccionAI_2023-2/raw/main/Development/Pablo/palabras.json)
+import requests
+
+json_url = "https://github.com/pmayavi/IntroduccionAI_2023-2/raw/main/Development/Pablo/palabras.json"
+try:
+    response = requests.get(json_url)
+
+    # Verifica si la descarga fue exitosa (código de respuesta 200)
+    if response.status_code == 200:
+        # El contenido del archivo JSON estará en response.json()
+        data = response.json()
+
+        print(data)
+    else:
+        print(
+            f"Error al descargar el archivo JSON. Código de respuesta: {response.status_code}"
+        )
+
+except Exception as e:
+    print(f"Error: {e}")
 
 # Crear una lista de sinónimos con información de su comando correspondiente
 base_conocimiento = []
