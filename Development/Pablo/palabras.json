@@ -1,0 +1,138 @@
+{
+    "buscar": {
+        "palabras": [
+            "buscar",
+            "buscame",
+            "investiga",
+            "investigar",
+            "investigame",
+            "averigua",
+            "averiguame",
+            "indaga",
+            "indagar",
+            "indagame",
+            "busca",
+            "encuentra"
+        ],
+        "ubicacion": [
+            100,
+            0
+        ],
+        "hacer": "ingresarPalabra(x) y enter"
+    },
+    "ingresar": {
+        "palabras": [
+            "ingresar",
+            "ingresa",
+            "ingresame",
+            "entrar",
+            "entra",
+            "acceder",
+            "accede",
+            "adentrate",
+            "introdúcete",
+            "penetra",
+            "registrarse",
+            "ingresarse",
+            "meter",
+            "meteme",
+            "metete"
+        ],
+        "ubicacion": [
+            200,
+            100
+        ],
+        "hacer": "click"
+    },
+    "leer": {
+        "palabras": [
+            "leer",
+            "escudriñar",
+            "examinar",
+            "examina",
+            "examínate",
+            "examíname",
+            "estudiar",
+            "estúdiate",
+            "estúdiame",
+            "repasar",
+            "repasa",
+            "repásate",
+            "repásame",
+            "hojear",
+            "hojéate",
+            "hojéame",
+            "revisar",
+            "revísame",
+            "analizar",
+            "analízame",
+            "analízate",
+            "perusar",
+            "ojear",
+            "ojea",
+            "ojéate",
+            "ojéame",
+            "explorar",
+            "explora",
+            "explórate",
+            "explórame"
+        ],
+        "ubicacion": [
+            0,
+            0
+        ],
+        "hacer": "leer"
+    },
+    "repetir": {
+        "palabras": [
+            "repetir",
+            "reiterar",
+            "reiterame",
+            "reproducir",
+            "reprodúceme",
+            "repito",
+            "repite",
+            "reitero",
+            "reproduce",
+            "reproduzco",
+            "repíteme",
+            "hazlo de nuevo",
+            "repite por favor"
+        ],
+        "ubicacion": [
+            0,
+            0
+        ],
+        "hacer": "leer(x)"
+    },
+    "resumir": {
+        "palabras": [
+            "resumir",
+            "resume",
+            "resumen",
+            "sintetizar",
+            "sintetiza",
+            "sintetízame",
+            "abreviar",
+            "abrevia",
+            "condensar",
+            "condensa",
+            "reducir",
+            "reduce",
+            "revisar",
+            "revisa",
+            "compactar",
+            "compacta",
+            "recrear",
+            "recrea",
+            "extractar",
+            "compendiar",
+            "digestar"
+        ],
+        "ubicacion": [
+            0,
+            0
+        ],
+        "hacer": "resumir y leer"
+    }
+}
