@@ -1,14 +1,7 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-import time
-import threading
-import selenium.common.exceptions as ex
-import speech_recognition as sr
-import json
-import requests
+
 # instalar PyAudio (pip install PyAudio)
 
-set1 = set(
+keywords = set(
     [
         "Search",
         "search",
@@ -33,26 +26,6 @@ peso = {
     "textarea": 9,
 }
 
-
-def auto_timmer():
-    tiempo_inicio = time.time()
-
-    def timer():
-        while True:
-            minutos, segundos = divmod(int(time.time() - tiempo_inicio), 60)
-            print(
-                f"                                                         Tiempo transcurrido: {minutos:02d}:{segundos:02d}",
-                end="\r\r",
-            )
-            time.sleep(1)
-
-    thread = threading.Thread(target=timer)
-    thread.daemon = (
-        True  # Set the thread as daemon so it will exit when the main program exits
-    )
-    thread.start()
-
-
 class Nodo:
     def __init__(self, elemento):
         self.elemento = [elemento]
@@ -60,12 +33,18 @@ class Nodo:
         self.izquierda = None
         self.derecha = None
 
-    def imprimir_arbol(self):
-        if self.izquierda:
-            self.izquierda.imprimir_arbol()
-        print(self.elemento[0]["Tagname"] + " " + str(len(self.elemento)) + " -> ")
+    def imprimir_arbol(self, nivel=0):
         if self.derecha:
-            self.derecha.imprimir_arbol()
+            self.derecha.imprimir_arbol(nivel + 1)
+        
+        # Agregar espacios para la indentación
+        print("  " * nivel, end="")
+        
+        # Imprimir el elemento actual
+        print(self.elemento[0]["Tagname"] + " " + str(len(self.elemento)) + " -> ")
+        
+        if self.izquierda:
+            self.izquierda.imprimir_arbol(nivel + 1)
 
 
 def insertar(nodo_actual, nuevo_elemento, es_interactuable):
@@ -73,28 +52,18 @@ def insertar(nodo_actual, nuevo_elemento, es_interactuable):
         nodo_nuevo = Nodo(nuevo_elemento)
         nodo_nuevo.interactuable = es_interactuable
         return nodo_nuevo
-
-    # print("Nueva"+str(nuevo_elemento.i))
-    # print("Actual"+str(nodo_actual.elemento.i))
-
-    try:
-        # print(nodo_actual)
-        if nodo_actual.elemento[0] and nuevo_elemento["i"] < nodo_actual.elemento[0]["i"]:
-            nodo_actual.izquierda = insertar(
-                nodo_actual.izquierda, nuevo_elemento, es_interactuable
-            )
-        elif (
-            nodo_actual.elemento[0]
-            and nuevo_elemento["i"] == nodo_actual.elemento[0]["i"]
-            and nuevo_elemento["Tagname"] == nodo_actual.elemento[0]["Tagname"]
-        ):
-            nodo_actual.elemento.append(nuevo_elemento)
-        else:
-            nodo_actual.derecha = insertar(
-                nodo_actual.derecha, nuevo_elemento, es_interactuable
-            )
-    except ex.StaleElementReferenceException:
-        print("Stale Element Reference Exception.")
+    # print(nodo_actual)
+    if nodo_actual.elemento[0] and nuevo_elemento["i"] < nodo_actual.elemento[0]["i"]:
+        nodo_actual.izquierda = insertar(
+            nodo_actual.izquierda, nuevo_elemento, es_interactuable
+        )
+    elif (
+        nodo_actual.elemento[0]
+        and nuevo_elemento["i"] == nodo_actual.elemento[0]["i"]
+        and nuevo_elemento["Tagname"] == nodo_actual.elemento[0]["Tagname"]
+    ):
+        nodo_actual.elemento.append(nuevo_elemento)
+    else:
         nodo_actual.derecha = insertar(
             nodo_actual.derecha, nuevo_elemento, es_interactuable
         )
@@ -102,7 +71,6 @@ def insertar(nodo_actual, nuevo_elemento, es_interactuable):
     return nodo_actual
 
 def get_index(elemento):
-    try:
         tag = elemento["Tagname"]
         if tag == "a":  # si es link
             href = elemento["href"]
@@ -133,9 +101,6 @@ def get_index(elemento):
             elemento["i"] = peso["input"]
         else:
             elemento["i"]= 0
-    except ex.StaleElementReferenceException:
-        print("Stale Element Reference Exception.")
-
 
 def buscar_interactuable(nodo_actual, tag, i):
     if nodo_actual is None:
@@ -149,22 +114,17 @@ def buscar_interactuable(nodo_actual, tag, i):
     else:
         return buscar_interactuable(nodo_actual.derecha, tag, i)
 
-
 def validar_busqueda(elemento):
-    try:
-        set2 = set(
-            [
-                elemento["label"],
-                elemento["text"],
-                elemento["HTML_id"],
-                elemento["placeholder"],
-            ]
-        )
-        common_elements = set1.intersection(set2)
-        return len(common_elements) > 0
-    except ex.StaleElementReferenceException:
-        print("Stale Element Reference Exception.")
-        return False
+    set2 = set(
+        [
+            elemento["label"],
+            elemento["text"],
+            elemento["HTML_id"],
+            elemento["placeholder"],
+        ]
+    )
+    common_elements = keywords.intersection(set2)
+    return len(common_elements) > 0
 
 '''
 def create_json(elemento):
@@ -181,14 +141,14 @@ def create_json(elemento):
     return new_element
 '''
 
+import requests
 def main():
-    auto_timmer()
     # Configuración de Selenium
     ##driver = webdriver.Chrome()
     ##url = "https://www.youtube.com"
     ## driver.get(url)
-    json_objects=[]
-    time.sleep(10)
+    #json_objects=[]
+    #time.sleep(10)
     # Obtener todas las elementos en la página
     ## elementos = driver.find_elements(By.XPATH, "//*")
     # Crear el nodo raíz del árbol
@@ -210,7 +170,6 @@ def main():
     except Exception as e:
         print(f"Error: {e}")
 
-
     # Procesar los elementos del JSON Archivo
     for elemento in data:
         es_interactuable = False
@@ -218,41 +177,34 @@ def main():
         get_index(elemento)
         # Aquí puedes agregar lógica para determinar si la elemento es interactuable
         # Por ejemplo, si es un enlace (<a>) o un botón (<button>)
-        try:
-            if elemento["Tagname"] in [
-                "a",
-                "button",
-                "input",
-                "textarea",
-            ] or validar_busqueda(elemento):
-                es_interactuable = True
-                raiz = insertar(raiz, elemento, es_interactuable)
-                all += (
-                    elemento["Tagname"]
-                    + ": "
-                    + elemento["text"]
-                    + " "
-                    + str(elemento["i"])
-                    + "\n"
-                )
-        except ex.StaleElementReferenceException:
-            print("Stale Element Reference Exception.")
-            
+        if elemento["Tagname"] in [
+            "a",
+            "button",
+            "input",
+            "textarea",
+        ] or validar_busqueda(elemento):
+            es_interactuable = True
+            raiz = insertar(raiz, elemento, es_interactuable)
+            all += (
+                elemento["Tagname"]
+                + ": "
+                + elemento["text"]
+                + " "
+                + str(elemento["i"])
+                + "\n"
+            )
         """
     with open("archivo.json", "w", encoding="utf-8") as json_file:
         json.dump(json_objects, json_file, indent=4)
-
     with open("./all.txt", "w", encoding="utf-8") as file:
         file.write(all)
         """
-
     # Imprimir el árbol en orden
     if raiz:
         print("Árbol:")
         raiz.imprimir_arbol()
     else:
         print("El árbol está vacío.")
-    
     """
     # Buscar si una elemento específica es interactuable
     r = sr.Recognizer()
@@ -275,7 +227,6 @@ def main():
 
     if comando == "Buscar":
         elementos_busqueda=["ytd-searchbox", "searchbox", "textarea"]
-        
 
     '''
     if comando == "Buscar":
@@ -296,16 +247,11 @@ def main():
 
     if es_interactuable:
         for elemento in es_interactuable.elemento:
-            try:
-                print(f"El elemento <{elemento_busqueda}> es interactuable.")
-            except ex.ElementNotInteractableException:
-                print("No es esta")
+            print(f"El elemento <{elemento_busqueda}> es interactuable.")
     else:
         print(f"El elemento <{elemento_busqueda}> no es interactuable.")
 
     # Cerrar el navegador
-    time.sleep(30)
     ##driver.quit()
-
 
 main()
