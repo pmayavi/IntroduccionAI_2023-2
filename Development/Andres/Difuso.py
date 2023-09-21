@@ -26,7 +26,7 @@ for key, value in data1.items():
 
 json_url2 = "https://github.com/pmayavi/IntroduccionAI_2023-2/raw/main/Development/Andres/difusos.json"
 try:
-    response = requests.get(json_url1)
+    response = requests.get(json_url2)
 
     # Verifica si la descarga fue exitosa (código de respuesta 200)
     if response.status_code == 200:
@@ -88,4 +88,4 @@ def mostrar_comando(texto):
     else:
         print("No se encontraron resultados.")
 
-mostrar_comando("repite mas rapido lo que dijiste")
+mostrar_comando("repite mas rápido lo que dijiste")
