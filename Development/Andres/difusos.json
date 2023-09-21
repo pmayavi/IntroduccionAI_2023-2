@@ -1,0 +1,35 @@
+{
+    "rápido": {
+        "palabras": [
+            "rápido",
+            "veloz",
+            "acelerado",
+            "aumentando velocidad"
+        ]
+    },
+    "lento": {
+        "palabras": [
+            "lento",
+            "despacio",
+            "disminuyendo la velocidad"
+        ]
+    },
+    "fuerte": {
+        "palabras": [
+            "fuerte",
+            "alto",
+            "aumenta el volumen",
+            "volumen alto",
+            "más ruidoso"
+        ]
+    },
+    "suave": {
+        "palabras": [
+            "suave",
+            "bajo",
+            "disminuye el volumen",
+            "volumen bajo",
+            "más silencioso"
+        ]
+    }
+}

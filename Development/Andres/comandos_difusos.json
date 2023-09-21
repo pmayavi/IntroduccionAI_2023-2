@@ -1,0 +1,35 @@
+{
+    "repetir": {
+        "palabras": [
+            "repetir",
+            "reiterar",
+            "reiterame",
+            "reproducir",
+            "reprodúceme",
+            "repito",
+            "repite",
+            "reitero",
+            "reproduce",
+            "reproduzco",
+            "repíteme",
+            "hazlo de nuevo",
+            "repite por favor"
+        ],
+        "hacer": "repitiendo(x)"
+    },
+    "leer": {
+        "palabras": [
+            "leer",
+            "leyendo",
+            "lee",
+            "lectura",
+            "léeme",
+            "léeme esto",
+            "pronuncia",
+            "pronúncialo",
+            "dime",
+            "dímelo"
+        ],
+        "hacer": "leer(x)"
+    }
+}
