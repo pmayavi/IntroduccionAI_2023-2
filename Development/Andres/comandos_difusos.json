@@ -15,7 +15,7 @@
             "hazlo de nuevo",
             "repite por favor"
         ],
-        "hacer": "repitiendo x"
+        "hacer": "repetir x"
     },
     "leer": {
         "palabras": [
@@ -30,6 +30,6 @@
             "dime",
             "dímelo"
         ],
-        "hacer": "leeyendo x"
+        "hacer": "leer x"
     }
 }

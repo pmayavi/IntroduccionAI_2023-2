@@ -80,7 +80,7 @@ def mostrar_comando(texto):
             )
             print(
                 f"""
-                Se hacen las acciones de [{data1[comando]['hacer'].replace('x', data2[difuso]['hacer'])}]
+                Se hacen la accion de [{data1[comando]['hacer'].replace('x', data2[difuso]['hacer'])}]
                 """
             )
         else:
