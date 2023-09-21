@@ -5,14 +5,16 @@
             "veloz",
             "acelerado",
             "aumentando velocidad"
-        ]
+        ],
+        "hacer": "Mas rapido"
     },
     "lento": {
         "palabras": [
             "lento",
             "despacio",
             "disminuyendo la velocidad"
-        ]
+        ],
+        "hacer": "Mas lento"
     },
     "fuerte": {
         "palabras": [
@@ -20,8 +22,10 @@
             "alto",
             "aumenta el volumen",
             "volumen alto",
-            "más ruidoso"
-        ]
+            "más ruidoso",
+            "más volumen"
+        ],
+        "hacer": "Con mayor volumen"
     },
     "suave": {
         "palabras": [
@@ -29,7 +33,9 @@
             "bajo",
             "disminuye el volumen",
             "volumen bajo",
-            "más silencioso"
-        ]
+            "más silencioso",
+            "menos volumen"
+        ],
+        "hacer": "Con menor volumen"
     }
 }

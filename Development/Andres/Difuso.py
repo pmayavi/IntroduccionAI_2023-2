@@ -1,6 +1,6 @@
 import requests
 import re
-json_url1 = "https://github.com/pmayavi/IntroduccionAI_2023-2/raw/main/Development/Pablo/palabras.json"
+json_url1 = "https://github.com/pmayavi/IntroduccionAI_2023-2/raw/main/Development/Andres/comandos_difusos.json"
 try:
     response = requests.get(json_url1)
 
@@ -24,7 +24,7 @@ for key, value in data1.items():
         base_conocimiento1.append((key, sin))
 
 
-json_url2 = "https://github.com/pmayavi/IntroduccionAI_2023-2/raw/main/Development/Pablo/palabras.json"
+json_url2 = "https://github.com/pmayavi/IntroduccionAI_2023-2/raw/main/Development/Andres/difusos.json"
 try:
     response = requests.get(json_url1)
 
@@ -40,10 +40,10 @@ try:
         )
 except Exception as e:
     print(f"Error: {e}")
-
+base_conocimiento2 = []
 for key, value in data2.items():
     for sin in value["palabras"]:
-        base_conocimiento1.append((key, sin))
+        base_conocimiento2.append((key, sin))
 
 def enontrar_significado(texto,base_conocimiento):
     for comando, sin in base_conocimiento:
@@ -59,21 +59,33 @@ def enontrar_significado(texto,base_conocimiento):
         
 def mostrar_comando(texto):
     primer_resultado = enontrar_significado(texto,base_conocimiento1)
+    segundo_resultado= enontrar_significado(texto,base_conocimiento2)
     if primer_resultado:
-        comando, sinonimo, posicion_sinonimo= primer_resultado
-        print(
-            f"""
-            Comando: {comando},
-            Sinónimo: {sinonimo},
-            Posición Sinónimo: ({posicion_sinonimo[0]}, {posicion_sinonimo[1]}),
-            """
-        )
-        print(
-            f"""
-            Se hacen las acciones de [{data1[comando]['hacer'].replace('x', "")}]
-            """
-        )
+        if segundo_resultado:
+            comando, sinonimo, posicion_sinonimo= primer_resultado
+            difuso, sinonimo_difuso, posicion_difuso= segundo_resultado
+            print(
+                f"""
+                Comando: {comando},
+                Sinónimo: {sinonimo},
+                Posición Sinónimo: ({posicion_sinonimo[0]}, {posicion_sinonimo[1]}),
+                """
+            )
+            print(
+                f"""
+                Difuso: {difuso},
+                Sinónimo: {sinonimo_difuso},
+                Posición del difuso: ({posicion_difuso[0]}, {posicion_difuso[1]}),
+                """
+            )
+            print(
+                f"""
+                Se hacen las acciones de [{data1[comando]['hacer'].replace('x', data2[difuso]['hacer'])}]
+                """
+            )
+        else:
+            print("No se encontraron resultados 2.")
     else:
         print("No se encontraron resultados.")
 
-mostrar_comando("Hola quiero investigar un resumen de la historia de los gatos")
+mostrar_comando("repite mas rapido lo que dijiste")
