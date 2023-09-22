@@ -1,69 +1,52 @@
 import requests
 import re
-json_url1 = "https://github.com/pmayavi/IntroduccionAI_2023-2/raw/main/Development/Andres/comandos_difusos.json"
-try:
-    response = requests.get(json_url1)
-
-    # Verifica si la descarga fue exitosa (código de respuesta 200)
-    if response.status_code == 200:
-        # El contenido del archivo JSON estará en response.json()
-        data1 = response.json()
-
-        print(data1)
-    else:
-        print(
-            f"Error al descargar el archivo JSON. Código de respuesta: {response.status_code}"
-        )
-
-except Exception as e:
-    print(f"Error: {e}")
-base_conocimiento1 = []
-
-for key, value in data1.items():
-    for sin in value["palabras"]:
-        base_conocimiento1.append((key, sin))
 
 
-json_url2 = "https://github.com/pmayavi/IntroduccionAI_2023-2/raw/main/Development/Andres/difusos.json"
-try:
-    response = requests.get(json_url2)
+def getJSON(json_url):
+    try:
+        response = requests.get(json_url)
+        # Verifica si la descarga fue exitosa (código de respuesta 200)
+        if response.status_code == 200:
+            # El contenido del archivo JSON estará en response.json()
+            data = response.json()
+        else:
+            print(f"Error al descargar el archivo JSON: {response.status_code}")
 
-    # Verifica si la descarga fue exitosa (código de respuesta 200)
-    if response.status_code == 200:
-        # El contenido del archivo JSON estará en response.json()
-        data2 = response.json()
+    except Exception as e:
+        print(f"Error: {e}")
+    base_conocimiento = []
 
-        print(data2)
-    else:
-        print(
-            f"Error al descargar el archivo JSON. Código de respuesta: {response.status_code}"
-        )
-except Exception as e:
-    print(f"Error: {e}")
-base_conocimiento2 = []
-for key, value in data2.items():
-    for sin in value["palabras"]:
-        base_conocimiento2.append((key, sin))
+    for key, value in data.items():
+        for sin in value["palabras"]:
+            base_conocimiento.append((key, sin))
 
-def enontrar_significado(texto,base_conocimiento):
+    return base_conocimiento, data
+
+
+base_conocimiento1, data1 = getJSON(
+    "https://github.com/pmayavi/IntroduccionAI_2023-2/raw/main/Development/Andres/comandos_difusos.json"
+)
+base_conocimiento2, data2 = getJSON(
+    "https://github.com/pmayavi/IntroduccionAI_2023-2/raw/main/Development/Andres/difusos.json"
+)
+
+
+def enontrar_significado(texto, base_conocimiento):
     for comando, sin in base_conocimiento:
         # Buscar la primera ocurrencia del sinónimo en el texto
         match = re.search(r"\b{}\b".format(re.escape(sin)), texto, flags=re.IGNORECASE)
         if match:
             inicio_sinonimo, fin_sinonimo = match.start(), match.end()
-            return (
-                comando,
-                sin,
-                (inicio_sinonimo, fin_sinonimo)
-            )
-        
+            return (comando, sin, (inicio_sinonimo, fin_sinonimo))
+
+
 def mostrar_comando(texto):
-    primer_resultado = enontrar_significado(texto,base_conocimiento1)
-    segundo_resultado= enontrar_significado(texto,base_conocimiento2)
+    primer_resultado = enontrar_significado(texto, base_conocimiento1)
+    segundo_resultado = enontrar_significado(texto, base_conocimiento2)
     if primer_resultado:
         if segundo_resultado:
-            comando, sinonimo, posicion_sinonimo= primer_resultado
-            difuso, sinonimo_difuso, posicion_difuso= segundo_resultado
+            comando, sinonimo, posicion_sinonimo = primer_resultado
+            difuso, sinonimo_difuso, posicion_difuso = segundo_resultado
             print(
                 f"""
                 Comando: {comando},
@@ -87,5 +70,6 @@ def mostrar_comando(texto):
             print("No se encontraron resultados 2.")
     else:
         print("No se encontraron resultados.")
+
 
 mostrar_comando("repite mas rápido lo que dijiste")
