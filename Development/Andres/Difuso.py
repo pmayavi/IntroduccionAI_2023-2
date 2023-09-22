@@ -49,21 +49,11 @@ def mostrar_comando(texto):
             difuso, sinonimo_difuso, posicion_difuso = segundo_resultado
             print(
                 f"""
-                Comando: {comando},
-                Sinónimo: {sinonimo},
+                Comando detectado: {comando},
                 Posición Sinónimo: ({posicion_sinonimo[0]}, {posicion_sinonimo[1]}),
-                """
-            )
-            print(
-                f"""
-                Difuso: {difuso},
-                Sinónimo: {sinonimo_difuso},
+                Comando difuso detectado: {difuso},
                 Posición del difuso: ({posicion_difuso[0]}, {posicion_difuso[1]}),
-                """
-            )
-            print(
-                f"""
-                Se hacen la accion de [{data1[comando]['hacer'].replace('x', data2[difuso]['hacer'])}]
+                Se hace la accion de [{data1[comando]['hacer'].replace('x', data2[difuso]['hacer'])}]
                 """
             )
         else:
