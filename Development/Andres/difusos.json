@@ -4,7 +4,7 @@
             "rápido",
             "veloz",
             "acelerado",
-            "aumentando velocidad"
+            "aumentando"
         ],
         "hacer": "mas rapido"
     },
@@ -12,9 +12,17 @@
         "palabras": [
             "lento",
             "despacio",
-            "disminuyendo la velocidad"
+            "disminuyendo"
         ],
         "hacer": "mas lento"
+    },
+    "normal": {
+        "palabras": [
+            "normal",
+            "medio",
+            "velocidad media"
+        ],
+        "hacer": "normal"
     },
     "fuerte": {
         "palabras": [
@@ -37,5 +45,14 @@
             "menos volumen"
         ],
         "hacer": "con menor volumen"
+    },
+    "medio": {
+        "palabras": [
+            "medio",
+            "intermedio",
+            "volumen medio",
+            "normal"
+        ],
+        "hacer": "con volumen medio"
     }
 }
